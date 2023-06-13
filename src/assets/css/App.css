@@ -11,6 +11,7 @@
 }
 
 /* Hero Section */
+
 .hero {
   padding: 20px;
 }
@@ -28,6 +29,59 @@
 .hero_content-container {
   max-width: 330px;
 }
+
+/* Card */
+
+.card {
+  width: 176px;
+}
+
+.card_image-container {
+  position: relative;
+}
+
+.card_label {
+  position: absolute;
+  background-color: #FFFFFF;
+  text-transform: uppercase;
+  padding: 4px 6px;
+  border-radius: 2px;
+  font-size: 10px;
+  top: 6px;
+  left: 6px;
+}
+
+.card_image-container > img {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.card_content-container {
+  font-size: 12px;
+}
+
+.card_reviews > img {
+  width: 12px;
+  height: 12px;
+  margin-right: 2px;
+}
+
+.card_location {
+  margin-left: 10px;
+  position: relative;
+}
+
+.card_location::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: #918E9B;
+  left: -6px;
+  top: 7px;
+}
+
+/* Media */
 
 @media screen and (min-width: 600px) {
   .hero {
