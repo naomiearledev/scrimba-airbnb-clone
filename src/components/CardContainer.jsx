@@ -1,18 +1,26 @@
 import Card from "./Card"
-import image1 from "../assets/images/katie-zaferes.png"
+import data from "../data"
 
 export default function CardComponent() {
-  return (
-    <>
+  const cards = data.map(item => {
+    return (
       <Card 
         label="sold out" 
-        image={image1} 
-        imageAlt="Photo of Katie Zaferes"
-        reviewStars="5.0"
-        reviewNumber={6}
-        title="Life lessons with Katie Zefares"
-        price={136}
+        image={item.coverImg} 
+        imageAlt={item.title}
+        reviewStars={item.stats.rating}
+        reviewNumber={item.stats.reviewCount}
+        location={item.location}
+        title={item.title}
+        price={item.price}
+        key={item.id}
       />
+    )
+  })
+  
+  return (
+    <>
+      {cards}
     </>
   )
 }
