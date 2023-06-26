@@ -5,7 +5,7 @@ export default function CardComponent() {
   const cards = data.map(item => {
     return (
       <Card 
-        label="sold out" 
+        label={item.openSpots === 0 ? "sold out" : ""} 
         image={item.coverImg} 
         imageAlt={item.title}
         reviewStars={item.stats.rating}
@@ -19,8 +19,8 @@ export default function CardComponent() {
   })
   
   return (
-    <>
+    <div className="card-container">
       {cards}
-    </>
+    </div>
   )
 }

@@ -10,11 +10,13 @@
   display: block;
 }
 
-/* Hero Section */
+/* Main */
 
-.hero {
+.main {
   padding: 20px;
 }
+
+/* Hero Section */
 
 .hero_image-container {
   padding: 26px 10px;
@@ -32,8 +34,17 @@
 
 /* Card */
 
+.card-container {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 1rem;
+  overflow: scroll;
+  padding-top: 20px;
+}
+
 .card {
   width: 176px;
+  flex: 0 0 auto; 
 }
 
 .card_image-container {
@@ -84,12 +95,16 @@
 /* Media */
 
 @media screen and (min-width: 600px) {
-  .hero {
+  .main {
     padding: 40px;
   }
   
   .hero_image-container {
     padding-bottom: 30px;
+  }
+
+  .card-container {
+    padding-top: 40px;
   }
 }
 
@@ -97,8 +112,8 @@
   .nav-bar > img {
     width: 112px;
   }
-  
-  .hero {
+
+  .main {
     padding: 50px;
   }
 
@@ -121,10 +136,14 @@
   .hero_content-container > p {
     font-size: 20px;
   }
+
+  .card-container {
+    padding-top: 50px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
-  .hero {
+  .main {
     padding: 100px;
   }
 
@@ -146,5 +165,9 @@
 
   .hero_content-container > p {
     font-size: 26px;
+  }
+
+  .card-container {
+    padding-top: 100px;
   }
 }

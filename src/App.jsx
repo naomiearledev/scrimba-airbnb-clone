@@ -1,6 +1,6 @@
 import './assets/css/App.css'
 import NavBar from './components/NavBar'
-// import Hero from './components/Hero'
+import Hero from './components/Hero'
 import CardContainer from './components/CardContainer'
 import data from './data'
 
@@ -10,8 +10,10 @@ function App() {
   return (
     <>
       <NavBar />
-      {/* <Hero /> */}
-      <CardContainer />
+      <div className="main">
+        <Hero />
+        <CardContainer />
+      </div>
     </>
   )
 }

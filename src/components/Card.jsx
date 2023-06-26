@@ -7,7 +7,7 @@ export default function Card({ label, image, imageAlt, reviewStars, reviewNumber
   return (
     <div className="card">
       <div className="card_image-container">
-        <span className="card_label">{label}</span>
+        {label !== "" && <span className="card_label">{label}</span>}
         <img src={imgSrc} alt={imageAlt} />
       </div>
       <div className="card_content-container">
