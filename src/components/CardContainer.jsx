@@ -3,17 +3,18 @@ import data from "../data"
 
 export default function CardComponent() {
   const cards = data.map(item => {
+    let labelText
+    if (item.openSpots === 0) {
+      labelText = "sold out"
+    } else if (item.location === "Online") {
+      labelText = "online"
+    }
+    
     return (
-      <Card 
-        label={item.openSpots === 0 ? "sold out" : ""} 
-        image={item.coverImg} 
-        imageAlt={item.title}
-        reviewStars={item.stats.rating}
-        reviewNumber={item.stats.reviewCount}
-        location={item.location}
-        title={item.title}
-        price={item.price}
+      <Card
         key={item.id}
+        data={item}
+        label={labelText}
       />
     )
   })

@@ -1,30 +1,30 @@
 import PropTypes from "prop-types"
 import starImage from "../assets/images/star.png"
 
-export default function Card({ label, image, imageAlt, reviewStars, reviewNumber, location, title, price }) {
-  const imgSrc = `../../public/${image}`
+export default function Card({ data, label }) {
+  const imgSrc = `../../public/${data.coverImg}`
 
   return (
     <div className="card">
       <div className="card_image-container">
         {label !== "" && <span className="card_label">{label}</span>}
-        <img src={imgSrc} alt={imageAlt} />
+        <img src={imgSrc} alt={data.title} />
       </div>
       <div className="card_content-container">
         <div className="card_info">
           <span className="card_reviews">
             <img src={starImage} alt="reviews" />
-            {reviewStars}
-            <span> ({reviewNumber})</span>
+            {data.stats.rating}
+            <span> ({data.stats.reviewCount})</span>
           </span>
-          <span className="card_location">{location}</span>
+          <span className="card_location">{data.location}</span>
         </div>
         <div className="card_title">
-          <p>{title}</p>
+          <p>{data.title}</p>
         </div>
         <div className="card_price">
           <span>
-            <strong>From ${price} </strong>/ person
+            <strong>From ${data.price} </strong>/ person
           </span>
         </div>
       </div>
@@ -34,11 +34,5 @@ export default function Card({ label, image, imageAlt, reviewStars, reviewNumber
 
 Card.propTypes = {
   label: PropTypes.string,
-  image: PropTypes.string.isRequired,
-  imageAlt: PropTypes.string.isRequired,
-  reviewStars: PropTypes.string.isRequired,
-  reviewNumber: PropTypes.number.isRequired,
-  location: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired
+  data: PropTypes.object
 }
